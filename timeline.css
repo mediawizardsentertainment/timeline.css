@@ -1,0 +1,61 @@
+.Timeline_List {
+    counter-reset: list-counter; /* Reset the counter */
+    font-family: system-ui;
+    border: 4px solid #f1f1f1;
+    padding: 20px;
+    background: #f5fff5;
+}
+.Timeline_Item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+.Timeline_Item::before {
+    content: counter(list-counter); /* Use the counter here */
+    counter-increment: list-counter; /* Increment the counter */
+    background-color: #059862;
+    color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    line-height: 30px;  
+    text-align: center;
+}
+.Timeline_Item::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 35px;
+    width: 2px;
+    height: calc(100% + 20px); 
+    background-color: #059862;
+    z-index: 0;
+}
+.Timeline_Item:last-child::after {
+    display: none; 
+}
+.KT_Content {
+    margin-left: 10px;
+}
+.KT_Content h3 {
+    margin: 0 0 10px;
+    font-size: 21px;
+    color: #333;
+    font-weight: 600;
+}
+.KT_Content p {
+    margin: 0;
+    padding: 0 0 10px;
+    color: #666;
+    line-height: 1.6;
+    font-size: 18px;
+}
